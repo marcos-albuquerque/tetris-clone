@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gameManager : MonoBehaviour
 {
@@ -145,5 +146,28 @@ public class gameManager : MonoBehaviour
                 pontoDificuldade += 100;
             }
         }
+    }
+
+    public bool acimaGrade(tetroMov pecaTetroMino)
+    {
+        for (int x = 0; x < largura; x++)
+        {
+            foreach(Transform quadrado in pecaTetroMino.transform)
+            {
+                Vector2 posicao = arredonda(quadrado.position);
+
+                if (posicao.y > altura - 1)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public void gameOver()
+    {
+        SceneManager.LoadScene("gameOverScene");
     }
 }

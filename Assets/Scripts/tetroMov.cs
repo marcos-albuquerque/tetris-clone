@@ -96,6 +96,12 @@ public class tetroMov : MonoBehaviour
             {
                 transform.position += new Vector3(0, 1, 0);
                 gManager.apagaLinha();
+
+                if (gManager.acimaGrade(this))
+                {
+                    gManager.gameOver();
+                }
+
                 gManager.score += 10;
                 gManager.pontoDificuldade += 10;
                 enabled = false; // desabilita a peça
@@ -117,6 +123,12 @@ public class tetroMov : MonoBehaviour
             {
                 transform.position += new Vector3(0, 1, 0);
                 gManager.apagaLinha();
+
+                if (gManager.acimaGrade(this))
+                {
+                    gManager.gameOver();
+                }
+
                 gManager.score += 10;
                 gManager.pontoDificuldade += 10;
                 enabled = false;

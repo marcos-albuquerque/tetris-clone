@@ -130,3 +130,61 @@ System memory in use after: 79,1 MB.
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2262.
 Total: 30,573450 ms (FindLiveObjects: 0,752762 ms CreateObjectMapping: 0,184475 ms MarkObjects: 23,808550 ms  DeleteObjects: 5,821150 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 1297,943380 seconds.
+  path: Assets/Scenes/Scene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Scene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bea4cbdabf8807b7221c006f89371fd4') in 0,045126 seconds
+  Import took 0,063871 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,003528 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 2,75 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5,698 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1,63 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1806 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 79,2 MB.
+System memory in use after: 79,2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2266.
+Total: 27,286313 ms (FindLiveObjects: 0,852925 ms CreateObjectMapping: 0,186988 ms MarkObjects: 25,791488 ms  DeleteObjects: 0,447450 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 575,359421 seconds.
+  path: Assets/Scenes/gameOverScene.unity
+  artifactKey: Guid(e7fa37c75476b18bab6b6a3d54b2fc08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/gameOverScene.unity using Guid(e7fa37c75476b18bab6b6a3d54b2fc08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11a59e687b5eeb7009cfb0152d60be33') in 0,062834 seconds
+  Import took 0,076437 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,003641 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1,17 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3,327 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1,13 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1806 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 79,2 MB.
+System memory in use after: 79,2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2270.
+Total: 10,313187 ms (FindLiveObjects: 2,108463 ms CreateObjectMapping: 0,333562 ms MarkObjects: 7,511975 ms  DeleteObjects: 0,352350 ms)
+
