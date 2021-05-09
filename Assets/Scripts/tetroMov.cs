@@ -89,6 +89,7 @@ public class tetroMov : MonoBehaviour
             else
             {
                 transform.position += new Vector3(0, 1, 0);
+                gManager.apagaLinha();
                 enabled = false; // desabilita a peça
                 gSpawner.proximaPeca();
             }
@@ -107,6 +108,7 @@ public class tetroMov : MonoBehaviour
             else
             {
                 transform.position += new Vector3(0, 1, 0);
+                gManager.apagaLinha();
                 enabled = false;
                 gSpawner.proximaPeca();
             }

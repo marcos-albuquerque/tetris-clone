@@ -77,4 +77,64 @@ public class gameManager : MonoBehaviour
             return grade[(int)posicao.x, (int)posicao.y];
         }
     }
+
+    public bool linhaCheia(int y)
+    {
+        for (int x = 0; x < largura; x++)
+        {
+            if (grade[x, y] == null)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public void deletaQuadrado(int y)
+    {
+        for (int x = 0; x < largura; x++)
+        {
+            Destroy(grade[x,y].gameObject); // destroi quadrado
+
+            grade[x,y] = null; // atualiza grade
+        }
+    }
+
+    public void moveLinhaBaixo(int y)
+    {
+        for (int x = 0; x < largura; x++)
+        {
+            // verifica se tem objeto para ser
+            // movido para baixo
+            if (grade[x,y] != null)
+            {
+                grade[x, y-1] = grade[x, y];
+                grade[x, y] = null;
+
+                grade[x, y-1].position += new Vector3(0, -1, 0);
+            }
+        }
+    }
+
+    public void moveTodasLinhasBaixo(int y)
+    {
+        for (int i = y; i < altura; i++)
+        {
+            moveLinhaBaixo(i);
+        }
+    }
+
+    public void apagaLinha()
+    {
+        for (int y = 0; y < altura; y++)
+        {
+            if (linhaCheia(y))
+            {
+                deletaQuadrado(y);
+                moveTodasLinhasBaixo(y+1);
+                y--;
+            }
+        }
+    }
 }
