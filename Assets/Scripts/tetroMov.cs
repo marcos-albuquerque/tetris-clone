@@ -12,12 +12,18 @@ public class tetroMov : MonoBehaviour
     public float velocidade;
     public float timer;
 
+    gameManager gManager;
+    spawnTetro gSpawner;
+
     // Start is called before the first frame update
     void Start()
     {
         // o timer começa a contar a partir do valor
         // que dermos para velocidade
         timer = velocidade;
+
+        gManager = GameObject.FindObjectOfType<gameManager>();
+        gSpawner = GameObject.FindObjectOfType<spawnTetro>();
     }
 
     // Update is called once per frame
@@ -38,7 +44,7 @@ public class tetroMov : MonoBehaviour
 
             if (posicaoValida())
             {
-                
+                gManager.atualizaGrade(this);
             }
             else
             {
@@ -58,7 +64,7 @@ public class tetroMov : MonoBehaviour
 
             if (posicaoValida())
             {
-                
+                gManager.atualizaGrade(this);
             }
             else
             {
@@ -78,11 +84,13 @@ public class tetroMov : MonoBehaviour
 
             if (posicaoValida())
             {
-                
+                gManager.atualizaGrade(this);
             }
             else
             {
                 transform.position += new Vector3(0, 1, 0);
+                enabled = false; // desabilita a peça
+                gSpawner.proximaPeca();
             }
 
             // queda = Time.time;
@@ -94,11 +102,13 @@ public class tetroMov : MonoBehaviour
 
             if (posicaoValida())
             {
-                
+                gManager.atualizaGrade(this);
             }
             else
             {
                 transform.position += new Vector3(0, 1, 0);
+                enabled = false;
+                gSpawner.proximaPeca();
             }
 
             queda = Time.time;
@@ -125,7 +135,7 @@ public class tetroMov : MonoBehaviour
 
                     if (posicaoValida())
                     {
-                        
+                        gManager.atualizaGrade(this);
                     }
                     else
                     {
@@ -138,7 +148,7 @@ public class tetroMov : MonoBehaviour
 
                     if (posicaoValida())
                     {
-                        
+                        gManager.atualizaGrade(this);
                     }
                     else
                     {
@@ -152,7 +162,7 @@ public class tetroMov : MonoBehaviour
 
                 if (posicaoValida())
                 {
-                    
+                    gManager.atualizaGrade(this);
                 }
                 else
                 {
@@ -168,10 +178,16 @@ public class tetroMov : MonoBehaviour
         foreach (Transform child in transform)
         {
             // passa a posição de cada bloco de uma peça
-            Vector2 posBloco = FindObjectOfType<gameManager>().arredonda(child.position);
+            Vector2 posBloco = gManager.arredonda(child.position);
 
             // se o quadrado não estiver dentro da grade
-            if(FindObjectOfType<gameManager>().dentroGrade(posBloco) == false)
+            if(gManager.dentroGrade(posBloco) == false)
+            {
+                return false;
+            }
+
+            // se tiver um bloco presente
+            if (gManager.posicaoTransformGrade(posBloco) != null && gManager.posicaoTransformGrade(posBloco).parent != transform)
             {
                 return false;
             }

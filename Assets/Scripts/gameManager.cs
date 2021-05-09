@@ -8,6 +8,8 @@ public class gameManager : MonoBehaviour
     public static int altura = 20;
     public static int largura = 10;
 
+    public static Transform[,] grade = new Transform[largura, altura];
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +31,50 @@ public class gameManager : MonoBehaviour
     public Vector2 arredonda(Vector2 nA)
     {
         return new Vector2(Mathf.Round(nA.x), Mathf.Round(nA.y));
+    }
+
+    public void atualizaGrade(tetroMov pecaTetris)
+    {
+        for (int y = 0; y < altura; y++)
+        {
+            for (int x = 0; x < largura; x++)
+            {
+                // se houver uma peça
+                if (grade[x,y] != null)
+                {
+                    // verifica se é a peça que está sendo controlada
+                    if (grade[x,y].parent == pecaTetris.transform)
+                    {
+                        // atribui null a posição da peça
+                        grade[x,y] = null;
+                    }
+                }
+            }
+        }
+
+        foreach (Transform peca in pecaTetris.transform)
+        {
+            Vector2 posicao = arredonda(peca.position);
+
+            // se estier dentro
+            if(posicao.y < altura)
+            {
+                grade[(int)posicao.x, (int)posicao.y] = peca;
+            }
+        }
+    }
+
+    public Transform posicaoTransformGrade(Vector2 posicao)
+    {
+        // se a posição estiver acima da altura
+        if(posicao.y > altura - 1)
+        {
+            return null;
+        }
+        else // se estiver abaixo da altura
+        {
+            // retorna posição para ser tratada
+            return grade[(int)posicao.x, (int)posicao.y];
+        }
     }
 }

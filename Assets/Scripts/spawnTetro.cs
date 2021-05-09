@@ -12,4 +12,9 @@ public class spawnTetro : MonoBehaviour
         // intancia uma peça, localização: transforme.positiom; posição: padrão
         Instantiate(criaPecas[Random.Range(0, 7)], transform.position, Quaternion.identity);
     }
+
+    public void proximaPeca()
+    {
+        Instantiate(criaPecas[Random.Range(0, 7)], transform.position, Quaternion.identity);
+    }
 }
