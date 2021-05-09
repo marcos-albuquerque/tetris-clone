@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
     // dimensões da grade
     public static int altura = 20;
     public static int largura = 10;
+
+    public int score = 0;
+    public Text textoScore;
 
     public static Transform[,] grade = new Transform[largura, altura];
 
@@ -19,7 +23,7 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        textoScore.text = score.ToString();
     }
 
     public bool dentroGrade(Vector2 posicao)
@@ -134,6 +138,7 @@ public class gameManager : MonoBehaviour
                 deletaQuadrado(y);
                 moveTodasLinhasBaixo(y+1);
                 y--;
+                score += 100;
             }
         }
     }
