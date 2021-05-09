@@ -12,6 +12,9 @@ public class gameManager : MonoBehaviour
     public int score = 0;
     public Text textoScore;
 
+    public int pontoDificuldade;
+    public float dificuldade = 1;
+
     public static Transform[,] grade = new Transform[largura, altura];
 
     // Start is called before the first frame update
@@ -139,6 +142,7 @@ public class gameManager : MonoBehaviour
                 moveTodasLinhasBaixo(y+1);
                 y--;
                 score += 100;
+                pontoDificuldade += 100;
             }
         }
     }

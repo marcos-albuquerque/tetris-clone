@@ -283,3 +283,45 @@ System memory in use after: 79,2 MB.
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2285.
 Total: 16,833325 ms (FindLiveObjects: 2,175762 ms CreateObjectMapping: 0,480050 ms MarkObjects: 13,694937 ms  DeleteObjects: 0,475150 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,003667 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 21,27 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4,747 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1,21 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1806 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 79,2 MB.
+System memory in use after: 79,2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2289.
+Total: 15,353038 ms (FindLiveObjects: 0,851337 ms CreateObjectMapping: 0,215188 ms MarkObjects: 13,808875 ms  DeleteObjects: 0,471187 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0,002955 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1,14 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3,526 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1,14 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0,00 ms.
+Unloading 1806 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 79,2 MB.
+System memory in use after: 79,2 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2293.
+Total: 9,719687 ms (FindLiveObjects: 0,841587 ms CreateObjectMapping: 0,193150 ms MarkObjects: 8,291138 ms  DeleteObjects: 0,388950 ms)
+

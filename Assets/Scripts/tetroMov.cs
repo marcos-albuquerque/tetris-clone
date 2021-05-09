@@ -29,6 +29,12 @@ public class tetroMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gManager.pontoDificuldade > 1000)
+        {
+            gManager.pontoDificuldade = 0;
+            gManager.dificuldade += .5f; 
+        }
+
         // quando o jogador soltar uma tecla
         if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.DownArrow))
             timer = velocidade;
@@ -91,6 +97,7 @@ public class tetroMov : MonoBehaviour
                 transform.position += new Vector3(0, 1, 0);
                 gManager.apagaLinha();
                 gManager.score += 10;
+                gManager.pontoDificuldade += 10;
                 enabled = false; // desabilita a peça
                 gSpawner.proximaPeca();
             }
@@ -98,7 +105,7 @@ public class tetroMov : MonoBehaviour
             // queda = Time.time;
         }
 
-        if (Time.time - queda >= 1 && !Input.GetKeyUp(KeyCode.DownArrow))
+        if (Time.time - queda >= (1 / gManager.dificuldade) && !Input.GetKeyUp(KeyCode.DownArrow))
         {
             transform.position += new Vector3(0, -1, 0);
 
@@ -111,6 +118,7 @@ public class tetroMov : MonoBehaviour
                 transform.position += new Vector3(0, 1, 0);
                 gManager.apagaLinha();
                 gManager.score += 10;
+                gManager.pontoDificuldade += 10;
                 enabled = false;
                 gSpawner.proximaPeca();
             }
